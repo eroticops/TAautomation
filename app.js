@@ -46,8 +46,8 @@ app.post("/",(req,res)=>{
             travel_Class: travelClass,
             travel_Fare: travelFare,
             travel_Conveyance: travelConveyance,
-            travel_Food_Lodging: travelFoodLodging,
-            travel_Incidemtal: travelIncidemtal,
+            travel_Food_Lodging: travelFoodAndLodging,
+            travel_Incidemtal: travelIncidental,
             travel_Total: travelTotal,
         }]
   }
