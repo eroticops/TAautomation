@@ -55,7 +55,7 @@ app.post("/",(req,res)=>{
   var jsonData=JSON.stringify(data);
 
   var options={
-    url:"https://kn3rsgdc-5000.inc1.devtunnels.ms/", 
+    url:"https://kn3rsgdc-5000.inc1.devtunnels.ms/upload", 
     method: "POST",
     body: jsonData
   }
