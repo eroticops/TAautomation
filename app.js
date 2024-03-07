@@ -11,11 +11,18 @@ app.get("/", (req, res) => {
   });
 
 app.post("/",(req,res)=>{
+
+  
   var Name=req.body.Name;
+  console.log(req.body.Name);
   var EmpId=req.body.Code_No;
+  console.log(req.body.Code_no);
   var Location=req.body.location;
+  console.log(req.body.location);
   var Designation=req.body.designation;
+  console.log(req.body.designation);
   var Department=req.body.department;
+  console.log(req.body.department);
   var PurposeOfVisit=req.body.Purpose_of_Visit;
 
   var travelDate=req.body.Date;
@@ -53,9 +60,9 @@ app.post("/",(req,res)=>{
   }
 
   var jsonData=JSON.stringify(data);
-
+  console.log(jsonData);
   var options={
-    url:"https://kn3rsgdc-5000.inc1.devtunnels.ms/upload", 
+    url:"https://rnjqgcs0-5000.inc1.devtunnels.ms/upload", 
     method: "POST",
     body: jsonData
   }
@@ -65,6 +72,8 @@ app.post("/",(req,res)=>{
       console.log(error);
     }else{
       console.log(response.statusCode);
+      
+      console.log("Submitted");
     }
   })
 })
