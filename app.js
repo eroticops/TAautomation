@@ -54,11 +54,14 @@ app.post("/",(req,res)=>{
   var jsonData=JSON.stringify(data);
 
   var options={
-    url:"https://kn3rsgdc-5000.inc1.devtunnels.ms/upload", 
+    url:"https://user-be-6dvcrnuzba-uc.a.run.app/upload", 
     method: "POST",
     body: jsonData,
+    headers: {
+      "Authorization": "Bearer 186ca51480a74b829cd593cb3e560d82410bdfc8cfcfd39fff7b0ad9f7015814"
+    }
   };
-
+   console.log(jsonData);
   request(options, (error, response, body) => {
     if (error) {
       console.log(response.statusCode);
