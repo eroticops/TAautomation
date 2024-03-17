@@ -18,8 +18,10 @@ app.post("/",(req,res)=>{
   var Department=req.body.department;
   var PurposeOfVisit=req.body.Purpose_of_Visit;
 
+  // Travelling
+
   var t=0;
-  var travel_id=t++;
+  var travelId=t++;
   var travelDate = req.body.Date;
   var travelFrom = req.body.Place;
   var travelTo = req.body.Name;
@@ -28,8 +30,38 @@ app.post("/",(req,res)=>{
   var travelFare = req.body.Fare;
   var travelConveyance = req.body.Convenience;
   var travelFoodAndLodging = req.body.Food_Loddging;
-  var travelIncidental = req.body.Incenditial;
+  var travelIncidental = req.body.Incidential;
   var travelTotal = req.body.Total;
+
+  // Conveyance
+  var u=0;
+  var conveyanceId = u++;
+  var conveyanceDate = req.body.Convenience_Date;
+  var conveyanceFrom = req.body.Convenience_From;
+  var conveyanceTo = req.body.Convenience_To;
+  var conveyanceMode = req.body.Convenience_Mode;
+  var conveyancePurpose = req.body.Convenience_Purpose;
+  var conveyanceAmount = req.body.Convenience_Amount;
+  var conveyanceBill = req.body.Convenience_Bill;
+
+  // foodAndLodging
+  var v=0;
+  var foodLodgingId = v++;
+  var foodLodgingDate = req.body.foodLodging_Date;
+  var foodLodgingBillNo = req.body.foodLodging_BillNo;
+  var foodLodgingHotel = req.body.foodLodging_Hotel;
+  var foodLodgingOccupancy = req.body.foodLodging_Occupancy;
+  var foodLodgingAmount = req.body.foodLodging_Amount;
+  var foodLodgingBill = req.body.foodLodging_Bill;
+
+  // Incidental
+  var w=0; 
+  var incidentalId = w++;
+  var incidentalDate = req.body.incidentals_Date;
+  var incidentalExpense = req.body.incidentals_Expense;
+  var incidentalRemarks = req.body.incidentals_Remarks;
+  var incidentalAmount = req.body.incidentals_Amount;
+  var incidentalBill = req.body.incidentals_Bill;
 
   var data = {
     
@@ -41,9 +73,10 @@ app.post("/",(req,res)=>{
     purposeOfVisit: PurposeOfVisit,
     travels: [
       {
-        travelId:travel_id,
+        travel_Id:travelId,
         travel_Date: travelDate,
         travel_From: travelFrom,
+        travel_To: travelTo,
         travel_Mode: travelMode,
         travel_Class: travelClass,
         travel_Fare: travelFare,
@@ -51,6 +84,41 @@ app.post("/",(req,res)=>{
         travel_Food_Lodging: travelFoodAndLodging,
         travel_Incidemtal: travelIncidental,
         travel_Total: travelTotal,
+        travelDetails: {
+          conveyances: [
+              {
+                  conveyance_Id: conveyanceId,
+                  conveyance_Date: conveyanceDate,
+                  conveyanc_From: conveyanceFrom,
+                  conveyance_To: conveyanceTo,
+                  conveyance_Mode: conveyanceMode,
+                  conveyance_Purpose: conveyancePurpose,
+                  conveyance_Amount: conveyanceAmount,
+                  conveyance_Bill: conveyanceBill
+              }
+          ],
+          foodLodgings: [
+              {
+                  foodLodging_Id: foodLodgingId,
+                  foodLodging_Date: foodLodgingDate,
+                  foodLodging_BillNo: foodLodgingBillNo,
+                  foodLodging_Hotel: foodLodgingHotel,
+                  foodLodging_Occupancy: foodLodgingOccupancy,
+                  foodLodging_Amount: foodLodgingAmount,
+                  foodLodging_Bill: foodLodgingBill
+              }
+          ],
+          incidentals: [
+              {
+                  incidental_Id: incidentalId ,
+                  incidental_Date: incidentalDate,
+                  incidental_Expense: incidentalExpense,
+                  incidental_Remarks: incidentalRemarks,
+                  incidental_Amount: incidentalAmount,
+                  incidental_Bill: incidentalBill
+              }
+          ]
+      }
         
       },
     ],
