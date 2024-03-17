@@ -124,7 +124,7 @@ function myDeleteFunction() {
 
 <!----- TABLE ---------------------------------------------------------->
 <tr>
-    <td>DESCRIPTION
+    <td>TRAVELL DETAILS
      
     </td>
      
@@ -167,11 +167,58 @@ function myDeleteFunction() {
         </td>
         
     </tr>
+
+
     </table>
      
     </td>
     </tr>
-
+    <tr>
+        <td>CONVENIENCE
+         
+        </td>
+         
+        <td>
+        <table id="myTable">
+         
+        <tr>
+        <td align="center"><b>Sl.No.</b></td>
+        <td align="center"><b>Date</b></td>
+        <td align="center"><b>From </br> (From-To)</b></td>
+        <td align="center"><b>To</b></td>
+        <td align="center"><b>Mode</b></td>
+        <td align="center"><b>Purpose </br> Rs.</b></td>
+        <td align="center"><b>Amount </br> Rs.</b></td>
+        <td align="center"><b>Bill </br> Rs.</b></td>
+        </tr>
+         
+        <tr>
+        <td>1</td>
+        <td><input type="text" name="Convenience_Date" maxlength="30" /></td>
+        <td><input type="text" name="Convenience_From" maxlength="30" /></td>
+        <td><input type="text" name="Convenience_To" maxlength="30" /></td>
+        <td><input type="text" name="Convenience_Mode" maxlength="30" /></td>
+        <td><input type="text" name="Convenience_Purpose" maxlength="30" /></td>
+        <td><input type="text" name="Convenience_Amount" maxlength="30" /></td>
+        <td><input type="file" name="Convenience_Bill" maxlength="30" /></td>
+    
+         
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" onclick="myCreateFunction()" value="Create row"></input>
+            </td>
+            <td>
+                <input type="button" onclick="myDeleteFunction()" value="Delete row"></input>
+            </td>
+            
+        </tr>
+    
+    
+        </table>
+         
+        </td>
+        </tr>
 
 
 <!----- Claimant  -------------------------------------------------------->
