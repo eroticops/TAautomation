@@ -12,12 +12,14 @@ app.get("/", (req, res) => {
 
 app.post("/",(req,res)=>{
   var Name=req.body.Name;
-  var EmpId=req.body.Code_No;
+  var EmpId=req.body.empID;
   var Location=req.body.location;
   var Designation=req.body.designation;
   var Department=req.body.department;
   var PurposeOfVisit=req.body.Purpose_of_Visit;
 
+  var t=0;
+  var travel_id=t++;
   var travelDate = req.body.Date;
   var travelFrom = req.body.Place;
   var travelTo = req.body.Name;
@@ -30,6 +32,7 @@ app.post("/",(req,res)=>{
   var travelTotal = req.body.Total;
 
   var data = {
+    
     name: Name,
     empId: EmpId,
     location: Location,
@@ -38,6 +41,7 @@ app.post("/",(req,res)=>{
     purposeOfVisit: PurposeOfVisit,
     travels: [
       {
+        travelId:travel_id,
         travel_Date: travelDate,
         travel_From: travelFrom,
         travel_Mode: travelMode,
@@ -47,6 +51,7 @@ app.post("/",(req,res)=>{
         travel_Food_Lodging: travelFoodAndLodging,
         travel_Incidemtal: travelIncidental,
         travel_Total: travelTotal,
+        
       },
     ],
   };
@@ -58,7 +63,8 @@ app.post("/",(req,res)=>{
     method: "POST",
     body: jsonData,
     headers: {
-      "Authorization": "Bearer 186ca51480a74b829cd593cb3e560d82410bdfc8cfcfd39fff7b0ad9f7015814"
+      "Authorization": "Bearer 186ca51480a74b829cd593cb3e560d82410bdfc8cfcfd39fff7b0ad9f7015814",
+      "Content-Type": "application/json"
     }
   };
    console.log(jsonData);

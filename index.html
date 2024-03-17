@@ -19,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"> </script>
     <script>
         
-        
+        var t=1;
 function myCreateFunction() {
   var table = document.getElementById("myTable");
   var row = table.insertRow(2);
@@ -33,9 +33,9 @@ function myCreateFunction() {
   var cell8 = row.insertCell(7);
   var cell9 = row.insertCell(8);
   var cell10 = row.insertCell(9);
+  t++;
 
-
-  cell1.innerHTML = "new " ;
+  cell1.innerHTML = t;
   cell2.innerHTML = '<input name="Date" maxlength="30"></input>' ;
   cell3.innerHTML = '<input name="Place" maxlength="30"></input>' ;
   cell4.innerHTML = '<input name="Mode"maxlength="30"></input>';
@@ -69,7 +69,7 @@ function myDeleteFunction() {
 <!----- CODE No. ---------------------------------------------------------->
 <tr>
 <td>CODE No.</td>
-<td><input type="text" name="Code_no." maxlength="12"/>
+<td><input type="text" name="empID" maxlength="12"/>
 (max 12 characters 0-9)
 </td>
 </tr>
@@ -152,8 +152,13 @@ function myDeleteFunction() {
     <td><input type="text" name="Class" maxlength="30" /></td>
     <td><input type="text" name="Fare" maxlength="30" /></td>
     <td><input type="text" name="Convenience" maxlength="30" /></td>
+    <!-- <td><input type="file" name="Convenience" maxlength="30" /></td> -->
     <td><input type="text" name="Food&Loddging" maxlength="30" /></td>
+    <!-- <td><input type="file" name="Food&Loddging" maxlength="30" /></td> -->
+
     <td><input type="text" name="Incenditial" maxlength="30" /></td>
+    <!-- <td><input type="file" name="Incenditial" maxlength="30" /></td> -->
+
     <td><input type="text" name="Total" maxlength="30" /></td>
     </tr>
      
@@ -174,16 +179,7 @@ function myDeleteFunction() {
 
 
 
-<!----- Date  -------------------------------------------------------->
-<tr>
-    <td>DATE</td>
-     
-    <td>
-        <!-- <input  type="text" placeholder="dd.mm.yyyy">
-        <span class="glyphicon glyphicon-th"></span> -->
-        <input type="text" id="datepicker" name="datepicker">
-    </td>
-    </tr>
+<!----- Claimant  -------------------------------------------------------->
     <tr>
 <td>Claimant</td>
 <td><input type="text" name="Claimant" maxlength="30"/>
@@ -195,8 +191,6 @@ function myDeleteFunction() {
     <td>DATE</td>
      
     <td>
-        <!-- <input  type="text" placeholder="dd.mm.yyyy">
-        <span class="glyphicon glyphicon-th"></span> -->
         <input type="text" id="datepicker" name="datepicker">
     </td>
     </tr>
