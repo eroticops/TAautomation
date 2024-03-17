@@ -1,10 +1,10 @@
-/* h2{font-family: Calibri; font-size: 22pt; font-style: normal; font-weight: bold; color:SlateBlue;
+h2{font-family: Calibri; font-size: 22pt; font-style: normal; font-weight: bold; color:SlateBlue;
     text-align: center; text-decoration: underline }
     h4{font-family: Calibri; font-size: 22pt; font-style: normal; font-weight:lighter; color:SlateBlue;
     text-align: center; text-decoration:none }
     table{font-family: Calibri; color:white; font-size: 11pt; font-style: normal;
-    background-color: rgb(147, 131, 249); border-collapse: collapse; border: 2px solid navy}
-    table.inner{border: 0px} */
+    border-collapse: collapse; border: 2px solid rgb(7, 7, 7)}
+    table.inner{border: 0px}
 
 @keyframes colorChange {
     0% { background-color: #ff7e5f; }
@@ -17,3 +17,9 @@
   }
 
 
+/* header{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(360_F_565952621_cVnupqdsbMERrZBT0qXBztmIaTR6vxVa.jpg);
+    height: 150vh;
+    background-size: cover;
+    background-position: center;
+} */
