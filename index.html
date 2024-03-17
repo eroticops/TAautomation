@@ -173,6 +173,7 @@ function myDeleteFunction() {
      
     </td>
     </tr>
+
     <tr>
         <td>CONVENIENCE
          
@@ -184,7 +185,7 @@ function myDeleteFunction() {
         <tr>
         <td align="center"><b>Sl.No.</b></td>
         <td align="center"><b>Date</b></td>
-        <td align="center"><b>From </br> (From-To)</b></td>
+        <td align="center"><b>From </br></td>
         <td align="center"><b>To</b></td>
         <td align="center"><b>Mode</b></td>
         <td align="center"><b>Purpose </br> Rs.</b></td>
@@ -219,7 +220,94 @@ function myDeleteFunction() {
          
         </td>
         </tr>
+    
+        <tr>
+        <td>FOOD & LODDGING
+         
+        </td>
+         
+        <td>
+        <table id="myTable">
+         
+            <tr>
+                <td align="center"><b>Sl.No.</b></td>
+                <td align="center"><b>Date</b></td>
+                <td align="center"><b>Bill No. </br></td>
+                <td align="center"><b>Hotel</b></td>
+                <td align="center"><b>Occupancy</b></td>
+                <td align="center"><b>Amount </br> Rs.</b></td>
+                <td align="center"><b>Bill </br> Rs.</b></td>
+                </tr>
+                 
+                <tr>
+                <td>1</td>
+                <td><input type="text" name="foodLodging_Date" maxlength="30" /></td>
+                <td><input type="text" name="foodLodging_BillNo" maxlength="30" /></td>
+                <td><input type="text" name="foodLodging_Hotel" maxlength="30" /></td>
+                <td><input type="text" name="foodLodging_Occupancy" maxlength="30" /></td>
+                <td><input type="text" name="foodLodging_Amount" maxlength="30" /></td>
+                <td><input type="file" name="foodLodging_Bill" maxlength="30" /></td>
+            
+                 
+            
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" onclick="myCreateFunction()" value="Create row"></input>
+            </td>
+            <td>
+                <input type="button" onclick="myDeleteFunction()" value="Delete row"></input>
+            </td>
+            
+        </tr>
 
+        </table>
+         
+        </td>
+        </tr>
+
+        <tr>
+            <td>INCIDENTALS
+             
+            </td>
+             
+            <td>
+            <table id="myTable">
+             
+                <tr>
+                    <td align="center"><b>Sl.No.</b></td>
+                    <td align="center"><b>Date</b></td>
+                    <td align="center"><b>Expense </br></td>
+                    <td align="center"><b>Remarks</b></td>
+                    <td align="center"><b>Amount </br> Rs.</b></td>
+                    <td align="center"><b>Bill </br> Rs.</b></td>
+                </tr>
+                     
+                <tr>
+                    <td>1</td>
+                    <td><input type="text" name="incidentals_Date" maxlength="30" /></td>
+                    <td><input type="text" name="incidentals_Expense" maxlength="30" /></td>
+                    <td><input type="text" name="incidentals_Remarks" maxlength="30" /></td>
+                    <td><input type="text" name="incidentals_Amount" maxlength="30" /></td>
+                    <td><input type="file" name="incidentals_Bill" maxlength="30" /></td>
+                
+                     
+                
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" onclick="myCreateFunction()" value="Create row"></input>
+                </td>
+                <td>
+                    <input type="button" onclick="myDeleteFunction()" value="Delete row"></input>
+                </td>
+                
+            </tr>
+    
+            </table>
+             
+            </td>
+            </tr>
 
 <!----- Claimant  -------------------------------------------------------->
     <tr>
