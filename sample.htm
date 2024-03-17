@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sample.css">
+<body>
+    <div class="container">
+        <h1>Traveling Allowance Form</h1>
+        <form>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="employee-id">Employee ID:</label>
+                <input type="text" id="employee-id" name="employee-id" required>
+            </div>
+            <div class="form-group">
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required>
+            </div>
+            <div class="form-group">
+                <label for="travel-purpose">Travel Purpose:</label>
+                <select id="travel-purpose" name="travel-purpose">
+                    <option value="meeting">Meeting</option>
+                    <option value="training">Training</option>
+                    <option value="conference">Conference</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="travel-expenses">Travel Expenses (USD):</label>
+                <input type="number" id="travel-expenses" name="travel-expenses" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
