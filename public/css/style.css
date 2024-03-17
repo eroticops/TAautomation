@@ -1,7 +1,18 @@
-h2{font-family: Calibri; font-size: 22pt; font-style: normal; font-weight: bold; color:SlateBlue;
+/* h2{font-family: Calibri; font-size: 22pt; font-style: normal; font-weight: bold; color:SlateBlue;
     text-align: center; text-decoration: underline }
     h4{font-family: Calibri; font-size: 22pt; font-style: normal; font-weight:lighter; color:SlateBlue;
     text-align: center; text-decoration:none }
     table{font-family: Calibri; color:white; font-size: 11pt; font-style: normal;
     background-color: rgb(147, 131, 249); border-collapse: collapse; border: 2px solid navy}
-    table.inner{border: 0px}
+    table.inner{border: 0px} */
+
+@keyframes colorChange {
+    0% { background-color: #ff7e5f; }
+    50% { background-color: #feb47b; }
+    100% { background-color: #ff7e5f; }
+  }
+  
+  body {
+    animation: colorChange 5s infinite;
+  }
+      
