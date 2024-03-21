@@ -43,7 +43,6 @@ app.post("/",(req,res)=>{
       conveyance_Bill: conveyanceBill
     });
   }
-
   // foodAndLodging
   var foodLodgings = [];
   var totalRowsF = parseInt(req.body.totalRowsFoodAndLodging);
@@ -66,7 +65,6 @@ app.post("/",(req,res)=>{
       foodLodging_Bill: foodLodgingBill
     });
   }
-
   // Incidental
   var incidentals = [];
   var totalRowsI = parseInt(req.body.totalRowsIncidental);
@@ -87,7 +85,6 @@ app.post("/",(req,res)=>{
       incidental_Bill: incidentalBill
     });
   }
-  
   // Travelling
   var travels = [];
   var totalRowsT = parseInt(req.body.totalRowsTravelling);
