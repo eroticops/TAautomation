@@ -7,8 +7,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Variables
-var BE_URL = "http://localhost:5000";
-// var BE_URL = process.env.BE_URL || "http://localhost:5000";
+var BE_URL = process.env.BE_URL || "http://127.0.0.1:5000";
 console.log("The BE url is", BE_URL);
 
 // Functions
@@ -153,7 +152,8 @@ app.post("/", (req, res) => {
     method: "POST",
     body: jsonData,
     headers: {
-      Authorization: "Bearer" + process.env.BEARER_TOKEN,
+      Authorization:
+        "Bearer 186ca51480a74b829cd593cb3e560d82410bdfc8cfcfd39fff7b0ad9f7015814",
       "Content-Type": "application/json",
     },
   };
