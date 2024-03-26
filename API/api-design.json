@@ -1,0 +1,58 @@
+{
+    "name": "str: name of the employee",
+    "empId": "int: employee id",
+    "location": "str: location of the employee",
+    "designation": "str: designation of the employee",
+    "department": "str: department of the employee",
+    "purposeOfVisit": "str: purpose of visit",
+    "travels": [
+        {
+            "travelId": "str: travel id",
+            "travelDate": "date: date of travel",
+            "travelFrom": "str: travel from",
+            "travelTo": "str: travel to",
+            "travelMode": "str: travel mode",
+            "travelClass": "str: travel class",
+            "travelFare": "int: travel fare",
+            "travelConveyance": "int: total travel conveyance",
+            "travelFoodLodging": "int: total travel food and lodging",
+            "travelIncidemtal": "int: total travel incidental",
+            "travelTotal": "int: total travel amount",
+            "travelDetails": {
+                "conveyances": [
+                    {
+                        "conveyanceId": "str",
+                        "conveyanceDate": "date",
+                        "conveyanceFrom": "str",
+                        "conveyanceTo": "str",
+                        "conveyanceMode": "str",
+                        "conveyancePurpose": "str",
+                        "conveyanceAmount": "int",
+                        "conveyanceBill": "str"
+                    }
+                ],
+                "foodLodgings": [
+                    {
+                        "foodLodgingId": "str",
+                        "foodLodgingDate": "date",
+                        "foodLodgingBillNo": "str",
+                        "foodLodgingHotel": "str",
+                        "foodLodgingOccupancy": "str",
+                        "foodLodgingAmount": "int",
+                        "foodLodgingBill": "str"
+                    }
+                ],
+                "incidentals": [
+                    {
+                        "incidentalId": "str",
+                        "incidentalDate": "date",
+                        "incidentalExpense": "str",
+                        "incidentalRemarks": "str",
+                        "incidentalAmount": "int",
+                        "incidentalBill": "str"
+                    }
+                ]
+            }
+        }
+    ]
+}
