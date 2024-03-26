@@ -132,7 +132,7 @@ app.post("/",(req,res)=>{
     travels: travels
   };
 
-  var jsonData=JSON.stringify(data);
+  var jsonData = JSON.stringify(data);
 
   var options={
     url:"https://user-be-6dvcrnuzba-uc.a.run.app/upload", 
@@ -150,6 +150,7 @@ app.post("/",(req,res)=>{
       console.log(response.body);
     } else {
       console.log(response.statusCode);
+      console.log(response.body);
     }
   });
   res.sendFile(__dirname + "/index.html");
