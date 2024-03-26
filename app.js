@@ -152,8 +152,7 @@ app.post("/", (req, res) => {
     method: "POST",
     body: jsonData,
     headers: {
-      Authorization:
-        "Bearer 186ca51480a74b829cd593cb3e560d82410bdfc8cfcfd39fff7b0ad9f7015814",
+      Authorization: "Bearer " + process.env.BEARER_TOKEN,
       "Content-Type": "application/json",
     },
   };
