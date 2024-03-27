@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node
 COPY . .
 RUN npm i
 EXPOSE 3000
