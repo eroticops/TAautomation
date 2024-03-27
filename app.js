@@ -6,10 +6,6 @@ const app = express();
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Variables
-var BE_URL = process.env.BE_URL || "http://127.0.0.1:5000";
-console.log("The BE url is", BE_URL);
-
 // Functions
 function randomAlpha(length = 10) {
   const characters =
@@ -45,6 +41,8 @@ app.post("/", (req, res) => {
     var conveyancePurpose = req.body['Convenience_Purpose' + i];
     var conveyanceAmount = req.body['Convenience_Amount' + i];
     var conveyanceBill = req.body['Convenience_Bill' + i];
+
+    console.log(conveyance_Bill);
 
     Convenience.push({
       conveyanceId: randomAlpha(),
@@ -148,11 +146,12 @@ app.post("/", (req, res) => {
   var jsonData = JSON.stringify(data);
 
   var options = {
-    url: BE_URL + "/upload",
+    url: "https://user-be-6dvcrnuzba-uc.a.run.app/upload",
     method: "POST",
     body: jsonData,
     headers: {
-      Authorization: "Bearer " + process.env.BEARER_TOKEN,
+      Authorization:
+        "Bearer 186ca51480a74b829cd593cb3e560d82410bdfc8cfcfd39fff7b0ad9f7015814",
       "Content-Type": "application/json",
     },
   };
