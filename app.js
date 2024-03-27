@@ -31,6 +31,7 @@ app.post("/",(req,res)=>{
     var conveyancePurpose = req.body['Convenience_Purpose' + i];
     var conveyanceAmount = req.body['Convenience_Amount' + i];
     var conveyanceBill = req.body['Convenience_Bill' + i];
+    console.log(conveyanceBill);
 
     Convenience.push({
       conveyance_Id: i,
@@ -147,7 +148,7 @@ app.post("/",(req,res)=>{
   request(options, (error, response, body) => {
     if (error) {
       console.log(response.statusCode);
-      console.log(response.body);
+      // console.log(response.body);
     } else {
       console.log(response.statusCode);
     }
