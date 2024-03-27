@@ -6,18 +6,32 @@ const app = express();
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Variables
+var BE_URL = process.env.BE_URL || "http://127.0.0.1:5000";
+console.log("The BE url is", BE_URL);
+
+// Functions
+function randomAlpha(length = 10) {
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+}
+
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.post("/",(req,res)=>{
-  var Name=req.body.Name;
-  var EmpId=req.body.empID;
-  var Location=req.body.location;
-  var Designation=req.body.designation;
-  var Department=req.body.department;
-  var PurposeOfVisit=req.body.Purpose_of_Visit;
-
+app.post("/", (req, res) => {
+  var Name = req.body.Name;
+  var EmpId = req.body.empID;
+  var Location = req.body.location;
+  var Designation = req.body.designation;
+  var Department = req.body.department;
+  var PurposeOfVisit = req.body.Purpose_of_Visit;
 
   // Conveyance
   var Convenience = [];
@@ -31,126 +45,125 @@ app.post("/",(req,res)=>{
     var conveyancePurpose = req.body['Convenience_Purpose' + i];
     var conveyanceAmount = req.body['Convenience_Amount' + i];
     var conveyanceBill = req.body['Convenience_Bill' + i];
-    console.log(conveyanceBill);
 
     Convenience.push({
-      conveyance_Id: i,
-      conveyance_Date: conveyanceDate,
-      conveyanc_From: conveyanceFrom,
-      conveyance_To: conveyanceTo,
-      conveyance_Mode: conveyanceMode,
-      conveyance_Purpose: conveyancePurpose,
-      conveyance_Amount: conveyanceAmount,
-      conveyance_Bill: conveyanceBill
+      conveyanceId: randomAlpha(),
+      conveyanceDate: conveyance_Date,
+      conveyanceFrom: conveyance_From,
+      conveyanceTo: conveyance_To,
+      conveyanceMode: conveyance_Mode,
+      conveyancePurpose: conveyance_Purpose,
+      conveyanceAmount: conveyance_Amount,
+      conveyanceBill: conveyance_Bill,
     });
   }
   // foodAndLodging
   var foodLodgings = [];
   var totalRowsF = parseInt(req.body.totalRowsFoodAndLodging);
 
-  for (var i = 1; i <= totalRowsF ; i++) {
-    var foodLodgingDate = req.body['foodLodging_Date' + i];
-    var foodLodgingBillNo = req.body['foodLodging_BillNo' + i];
-    var foodLodgingHotel = req.body['foodLodging_Hotel' + i];
-    var foodLodgingOccupancy = req.body['foodLodging_Occupancy' + i];
-    var foodLodgingAmount = req.body['foodLodging_Amount' + i];
-    var foodLodgingBill = req.body['foodLodging_Bill' + i];
+  for (var i = 1; i <= totalRowsF; i++) {
+    var foodLodging_Date = req.body["foodLodging_Date" + i];
+    var foodLodging_BillNo = req.body["foodLodging_BillNo" + i];
+    var foodLodging_Hotel = req.body["foodLodging_Hotel" + i];
+    var foodLodging_Occupancy = req.body["foodLodging_Occupancy" + i];
+    var foodLodging_Amount = req.body["foodLodging_Amount" + i];
+    var foodLodging_Bill = req.body["foodLodging_Bill" + i];
 
     foodLodgings.push({
-      foodLodging_Id: i,
-      foodLodging_Date: foodLodgingDate,
-      foodLodging_BillNo: foodLodgingBillNo,
-      foodLodging_Hotel: foodLodgingHotel,
-      foodLodging_Occupancy: foodLodgingOccupancy,
-      foodLodging_Amount: foodLodgingAmount,
-      foodLodging_Bill: foodLodgingBill
+      foodLodgingId: randomAlpha(),
+      foodLodgingDate: foodLodging_Date,
+      foodLodgingBillNo: foodLodging_BillNo,
+      foodLodgingHotel: foodLodging_Hotel,
+      foodLodgingOccupancy: foodLodging_Occupancy,
+      foodLodgingAmount: foodLodging_Amount,
+      foodLodgingBill: foodLodging_Bill,
     });
   }
   // Incidental
   var incidentals = [];
   var totalRowsI = parseInt(req.body.totalRowsIncidental);
 
-  for (var i = 1; i <= totalRowsI ; i++) {
-    var incidentalDate = req.body['incidentals_Date' + i];
-    var incidentalExpense = req.body['incidentals_Expense' + i];
-    var incidentalRemarks = req.body['incidentals_Remarks' + i];
-    var incidentalAmount = req.body['incidentals_Amount' + i];
-    var incidentalBill = req.body['incidentals_Bill' + i];
+  for (var i = 1; i <= totalRowsI; i++) {
+    var incidental_Date = req.body["incidentals_Date" + i];
+    var incidental_Expense = req.body["incidentals_Expense" + i];
+    var incidental_Remarks = req.body["incidentals_Remarks" + i];
+    var incidental_Amount = req.body["incidentals_Amount" + i];
+    var incidental_Bill = req.body["incidentals_Bill" + i];
 
     incidentals.push({
-      incidental_Id: i ,
-      incidental_Date: incidentalDate,
-      incidental_Expense: incidentalExpense,
-      incidental_Remarks: incidentalRemarks,
-      incidental_Amount: incidentalAmount,
-      incidental_Bill: incidentalBill
+      incidentalId: randomAlpha(),
+      incidentalDate: incidental_Date,
+      incidentalExpense: incidental_Expense,
+      incidentalRemarks: incidental_Remarks,
+      incidentalAmount: incidental_Amount,
+      incidentalBill: incidental_Bill,
     });
   }
   // Travelling
   var travels = [];
   var totalRowsT = parseInt(req.body.totalRowsTravelling);
 
-  for (var i = 1; i <= totalRowsT ; i++) {
-    var travelDate = req.body['Date' + i];
-    var travelFrom = req.body['From' + i];
-    var travelTo = req.body['To' + i];
-    var travelMode = req.body['Mode' + i];
-    var travelClass = req.body['Class' + i];
-    var travelFare = req.body['Fare' + i];
-    var travelConveyance = req.body['Convenience' + i];
-    var travelFoodAndLodging = req.body['Food_Lodging' + i];
-    var travelIncidental = req.body['Incidental' + i];
-    var travelTotal = req.body['Total' + i];
+  for (var i = 1; i <= totalRowsT; i++) {
+    var travel_Date = req.body["Date" + i];
+    var travel_From = req.body["From" + i];
+    var travel_To = req.body["To" + i];
+    var travel_Mode = req.body["Mode" + i];
+    var travel_Class = req.body["Class" + i];
+    var travel_Fare = req.body["Fare" + i];
+    var travel_Conveyance = req.body["Convenience" + i];
+    var travel_FoodAndLodging = req.body["Food_Lodging" + i];
+    var travel_Incidental = req.body["Incidental" + i];
+    var travel_Total = req.body["Total" + i];
 
     travels.push({
-      travel_Id: i,
-      travel_Date: travelDate,
-      travel_From: travelFrom,
-      travel_To: travelTo,
-      travel_Mode: travelMode,
-      travel_Class: travelClass,
-      travel_Fare: travelFare,
-      travel_Conveyance: travelConveyance,
-      travel_Food_Lodging: travelFoodAndLodging,
-      travel_Incidemtal: travelIncidental,
-      travel_Total: travelTotal,
+      travelId: randomAlpha(),
+      travelDate: travel_Date,
+      travelFrom: travel_From,
+      travelTo: travel_To,
+      travelMode: travel_Mode,
+      travelClass: travel_Class,
+      travelFare: travel_Fare,
+      travelConveyance: travel_Conveyance,
+      travelFoodLodging: travel_FoodAndLodging,
+      travelIncidental: travel_Incidental,
+      travelTotal: travel_Total,
       travelDetails: {
         conveyances: Convenience,
         foodLodgings: foodLodgings,
-        incidentals: incidentals
-    }
+        incidentals: incidentals,
+      },
     });
   }
 
   var data = {
-    
     name: Name,
     empId: EmpId,
     location: Location,
     designation: Designation,
     department: Department,
     purposeOfVisit: PurposeOfVisit,
-    travels: travels
+    travels: travels,
   };
 
-  var jsonData=JSON.stringify(data);
+  var jsonData = JSON.stringify(data);
 
-  var options={
-    url:"https://user-be-6dvcrnuzba-uc.a.run.app/upload", 
+  var options = {
+    url: BE_URL + "/upload",
     method: "POST",
     body: jsonData,
     headers: {
-      "Authorization": "Bearer 186ca51480a74b829cd593cb3e560d82410bdfc8cfcfd39fff7b0ad9f7015814",
-      "Content-Type": "application/json"
-    }
+      Authorization: "Bearer " + process.env.BEARER_TOKEN,
+      "Content-Type": "application/json",
+    },
   };
-   console.log(jsonData);
+  console.log(jsonData);
   request(options, (error, response, body) => {
     if (error) {
       console.log(response.statusCode);
       // console.log(response.body);
     } else {
       console.log(response.statusCode);
+      console.log(response.body);
     }
   });
   res.sendFile(__dirname + "/index.html");

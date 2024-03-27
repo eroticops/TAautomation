@@ -147,13 +147,3 @@ function myCreateFunctionTravelling() {
           totalRowsInput.value = totalRows - 1;
       }
   }
-
-  function encodeFileToBase64(element) {
-    var file = element.files[0];
-    var reader = new FileReader();
-    reader.onloadend = function () {
-        var base64data = reader.result.split(',')[1];
-        element.setAttribute('data-base64', base64data);
-    }
-    reader.readAsDataURL(file);
-}
