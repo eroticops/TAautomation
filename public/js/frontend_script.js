@@ -1,3 +1,14 @@
+import { Client, Storage } from "appwrite";
+import { v4 as uuidv4 } from 'uuid';
+
+
+const client = new Client()
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('64dcc02f3d1750e6d155');
+
+const storage = new Storage(client);
+
+
 function myCreateFunctionTravelling() {
     var table = document.getElementById("myTableTravelling");
     var row = table.insertRow(-1);
@@ -55,6 +66,25 @@ function myCreateFunctionTravelling() {
     cell7.innerHTML = '<input type="text" name="Convenience_Amount'  + (totalRows + 1) + '" maxlength="30" />';
     cell8.innerHTML = '<input type="file" name="Convenience_Bill'  + (totalRows + 1) +'" maxlength="30" />';
     
+    var fileInput = document.getElementById("convenienceFileInput" + (totalRows + 1));
+
+    fileInput.addEventListener('change', async function(event) {
+        var file = event.target.files[0];
+        
+        try {
+            // Upload file to Appwrite storage
+            const response = await storage.createFile('6603d7829d049f9fb11b', uuidv4(), file);
+            console.log(response); // Success
+
+            // Extract the file ID from the response
+            var fileId = response["$id"];
+
+            // Update the input field with the file ID
+            document.getElementById('convenienceFileId' + (totalRows + 1)).value = fileId;
+        } catch (error) {
+            console.log(error); // Failure
+        }
+    });
   }
   function myCreateFunctionFoodAndLodging() {
     var table = document.getElementById("myTableFoodAndLodging");
@@ -78,7 +108,26 @@ function myCreateFunctionTravelling() {
     cell5.innerHTML = '<input type="text" name="foodLodging_Occupancy' + (totalRows + 1) + '" maxlength="30" />';
     cell6.innerHTML = '<input type="text" name="foodLodging_Amount' + (totalRows + 1) + '" maxlength="30" />';
     cell7.innerHTML = '<input type="file" name="foodLodging_Bill' + (totalRows + 1) + '" maxlength="30" />';
-              
+    
+    var fileInput = document.getElementById("foodLodgingFileInput" + (totalRows + 1));
+
+    fileInput.addEventListener('change', async function(event) {
+        var file = event.target.files[0];
+        
+        try {
+            // Upload file to Appwrite storage
+            const response = await storage.createFile('6603d7829d049f9fb11b', uuidv4(), file);
+            console.log(response); // Success
+
+            // Extract the file ID from the response
+            var fileId = response["$id"];
+
+            // Update the input field with the file ID
+            document.getElementById('foodLodgingFileId' + (totalRows + 1)).value = fileId;
+        } catch (error) {
+            console.log(error); // Failure
+        }
+    });
   }
   
   function myCreateFunctionIncidental() {
@@ -101,7 +150,26 @@ function myCreateFunctionTravelling() {
     cell4.innerHTML = '<input type="text" name="incidentals_Remarks' + (totalRows + 1) + '" maxlength="30" />';
     cell5.innerHTML = '<input type="text" name="incidentals_Amount' + (totalRows + 1) + '" maxlength="30" />';
     cell6.innerHTML = '<input type="file" name="incidentals_Bill' + (totalRows + 1) + '" maxlength="30" />';
-  
+    
+    var fileInput = document.getElementById("incidentalsFileInput" + (totalRows + 1));
+
+    fileInput.addEventListener('change', async function(event) {
+        var file = event.target.files[0];
+        
+        try {
+            // Upload file to Appwrite storage
+            const response = await storage.createFile('6603d7829d049f9fb11b', uuidv4(), file);
+            console.log(response); // Success
+
+            // Extract the file ID from the response
+            var fileId = response["$id"];
+
+            // Update the input field with the file ID
+            document.getElementById('incidentalsFileId' + (totalRows + 1)).value = fileId;
+        } catch (error) {
+            console.log(error); // Failure
+        }
+    });
   }
   
   function myDeleteFunctionTravelling() {

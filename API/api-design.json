@@ -16,7 +16,7 @@
             "travelFare": "int: travel fare",
             "travelConveyance": "int: total travel conveyance",
             "travelFoodLodging": "int: total travel food and lodging",
-            "travelIncidemtal": "int: total travel incidental",
+            "travelIncidental": "int: total travel incidental",
             "travelTotal": "int: total travel amount",
             "travelDetails": {
                 "conveyances": [

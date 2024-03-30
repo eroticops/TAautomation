@@ -29,7 +29,7 @@
     </script>
 
 <h2>ITD Cementation India Limited</h2>
-<form action="/" method="POST">
+<form action="/" method="POST" enctype="multipart/form-data">
  
 <table align="center" cellpadding = "10">
 <h4>TRAVEL EXPENSE REPORT</h4>
@@ -131,8 +131,8 @@
     <td><input type="text" name="Class1" maxlength="30" /></td>
     <td><input type="text" name="Fare1" maxlength="30" /></td>
     <td><input type="text" name="Convenience1" maxlength="30" /></td>
-    <td><input type="text" name="Food_Loddging1" maxlength="30" /></td>
-    <td><input type="text" name="Incenditial1" maxlength="30" /></td>
+    <td><input type="text" name="Food_Lodging1" maxlength="30" /></td>
+    <td><input type="text" name="Incidental1" maxlength="30" /></td>
     <td><input type="text" name="Total1" maxlength="30" /></td>
     </tr>
      
@@ -181,8 +181,9 @@
         <td><input type="text" name="Convenience_Mode1" maxlength="30" /></td>
         <td><input type="text" name="Convenience_Purpose1" maxlength="30" /></td>
         <td><input type="text" name="Convenience_Amount1" maxlength="30" /></td>
-        <td><input type="file" name="Convenience_Bill1" maxlength="30" /></td>
-    
+        <td><input type="file" id="convenienceFileInput1" name="Convenience_Bill1" maxlength="30" /></td>
+        <input type="hidden" id="convenienceFileId1" name="Convenience_BillId1" />
+
          
         <tr>
             <td></td>
@@ -227,7 +228,9 @@
                 <td><input type="text" name="foodLodging_Hotel1" maxlength="30" /></td>
                 <td><input type="text" name="foodLodging_Occupancy1" maxlength="30" /></td>
                 <td><input type="text" name="foodLodging_Amount1" maxlength="30" /></td>
-                <td><input type="file" name="foodLodging_Bill1" maxlength="30" /></td>
+                <td><input type="file" id="foodLodgingFileInput1" name="foodLodging_Bill1" maxlength="30" /></td>
+                <input type="hidden" id="foodLodgingFileId1" name="foodLodging_BillId1" />
+
         <tr>
             <td></td>
             <td>
@@ -268,7 +271,9 @@
                     <td><input type="text" name="incidentals_Expense1" maxlength="30" /></td>
                     <td><input type="text" name="incidentals_Remarks1" maxlength="30" /></td>
                     <td><input type="text" name="incidentals_Amount1" maxlength="30" /></td>
-                    <td><input type="file" name="incidentals_Bill1" maxlength="30" /></td>
+                    <td><input type="file" id="incidentalsFileInput1"  name="incidentals_Bill1" maxlength="30" /></td>
+                    <input type="hidden" id="incidentalsFileId1" name="incidentals_BillId1" />
+
             <tr>
                 <td></td>
                 <td>

@@ -34,13 +34,13 @@ app.post("/", (req, res) => {
   var totalRowsC = parseInt(req.body.totalRowsConvenience);
 
   for (var i = 1; i <= totalRowsC ; i++) {
-    var conveyanceDate = req.body['Convenience_Date' + i];
-    var conveyanceFrom = req.body['Convenience_From' + i];
-    var conveyanceTo = req.body['Convenience_To' + i];
-    var conveyanceMode = req.body['Convenience_Mode' + i];
-    var conveyancePurpose = req.body['Convenience_Purpose' + i];
-    var conveyanceAmount = req.body['Convenience_Amount' + i];
-    var conveyanceBill = req.body['Convenience_Bill' + i];
+    var conveyance_Date = req.body['Convenience_Date' + i];
+    var conveyance_From = req.body['Convenience_From' + i];
+    var conveyance_To = req.body['Convenience_To' + i];
+    var conveyance_Mode = req.body['Convenience_Mode' + i];
+    var conveyance_Purpose = req.body['Convenience_Purpose' + i];
+    var conveyance_Amount = req.body['Convenience_Amount' + i];
+    var conveyance_Bill = req.body['Convenience_BillId' + i];
 
     console.log(conveyance_Bill);
 
@@ -65,7 +65,7 @@ app.post("/", (req, res) => {
     var foodLodging_Hotel = req.body["foodLodging_Hotel" + i];
     var foodLodging_Occupancy = req.body["foodLodging_Occupancy" + i];
     var foodLodging_Amount = req.body["foodLodging_Amount" + i];
-    var foodLodging_Bill = req.body["foodLodging_Bill" + i];
+    var foodLodging_Bill = req.body["foodLodging_BillId" + i];
 
     foodLodgings.push({
       foodLodgingId: randomAlpha(),
@@ -86,7 +86,7 @@ app.post("/", (req, res) => {
     var incidental_Expense = req.body["incidentals_Expense" + i];
     var incidental_Remarks = req.body["incidentals_Remarks" + i];
     var incidental_Amount = req.body["incidentals_Amount" + i];
-    var incidental_Bill = req.body["incidentals_Bill" + i];
+    var incidental_Bill = req.body["incidentals_BillId" + i];
 
     incidentals.push({
       incidentalId: randomAlpha(),
